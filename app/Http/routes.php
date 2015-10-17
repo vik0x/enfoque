@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::put('agregar/tipogaleria.html','tipoGaleriaController@store');
+Route::patch('modificar/tipogaleria/{id}.html','tipoGaleriaController@edit');
+Route::delete('eliminar/tipogaleria/{id}.html','tipoGaleriaController@destroy');
