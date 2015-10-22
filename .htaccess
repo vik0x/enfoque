@@ -1,2 +1,2 @@
-#Redirect <codigo> <url_antigua con patrón> <nueva URL>
-RedirectMatch 301 /alfa(.*) http://alfa.enfoquecolima.com
+ RewriteEngine On
+    RewriteRule ^(.*)$ public/$1 [L]
