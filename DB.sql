@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `enfoque` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `enfoque`;
 -- MySQL dump 10.13  Distrib 5.6.24, for Win32 (x86)
 --
 -- Host: localhost    Database: enfoque
@@ -14,17 +16,91 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `elemento`
+--
+
+DROP TABLE IF EXISTS elemento;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE elemento (
+  id_elemento int(11) NOT NULL AUTO_INCREMENT,
+  id_galeria int(11) NOT NULL,
+  tipo_elemento tinyint(1) NOT NULL,
+  url varchar(250) NOT NULL,
+  activo tinyint(1) NOT NULL DEFAULT '-1',
+  PRIMARY KEY (id_elemento),
+  KEY fk_elemento_galeria1_idx (id_galeria),
+  CONSTRAINT fk_elemento_galeria1 FOREIGN KEY (id_galeria) REFERENCES galeria (id_galeria) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `elemento`
+--
+
+
+--
+-- Table structure for table `galeria`
+--
+
+DROP TABLE IF EXISTS galeria;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE galeria (
+  id_galeria int(11) NOT NULL AUTO_INCREMENT,
+  id_tipo_galeria int(11) NOT NULL,
+  portada varchar(250) DEFAULT 'null',
+  nombre varchar(45) NOT NULL,
+  descripcion varchar(500) NOT NULL,
+  activo tinyint(1) NOT NULL DEFAULT '0',
+  fecha_subida datetime NOT NULL,
+  step tinyint(1) NOT NULL,
+  PRIMARY KEY (id_galeria),
+  KEY fk_galeria_tipo_galeria_idx (id_tipo_galeria),
+  CONSTRAINT fk_galeria_tipo_galeria FOREIGN KEY (id_tipo_galeria) REFERENCES tipo_galeria (id_tipo_galeria) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `galeria`
+--
+
+
+--
+-- Table structure for table `publicidad`
+--
+
+DROP TABLE IF EXISTS publicidad;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE publicidad (
+  id_publicidad int(11) NOT NULL AUTO_INCREMENT,
+  nombre varchar(100) NOT NULL,
+  fecha_inicio datetime NOT NULL,
+  activo tinyint(1) NOT NULL,
+  fila tinyint(1) NOT NULL,
+  seccion int(11) NOT NULL,
+  PRIMARY KEY (id_publicidad)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `publicidad`
+--
+
+
+--
 -- Table structure for table `tipo_galeria`
 --
 
-DROP TABLE IF EXISTS `tipo_galeria`;
+DROP TABLE IF EXISTS tipo_galeria;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `tipo_galeria` (
-  `id_tipo_galeria` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Es el identificador de la tabla.',
-  `nombre` varchar(45) NOT NULL COMMENT 'El nombre del tipo de galería.',
-  `activo` tinyint(1) NOT NULL DEFAULT '1' COMMENT 'Este campo sirve para poner en 1 cuando está activo y en 0 cuando no.',
-  PRIMARY KEY (`id_tipo_galeria`)
+CREATE TABLE tipo_galeria (
+  id_tipo_galeria int(11) NOT NULL AUTO_INCREMENT COMMENT 'Es el identificador de la tabla.',
+  nombre varchar(45) NOT NULL COMMENT 'El nombre del tipo de galería.',
+  activo tinyint(1) NOT NULL DEFAULT '1' COMMENT 'Este campo sirve para poner en 1 cuando está activo y en 0 cuando no.',
+  PRIMARY KEY (id_tipo_galeria)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Esta tabla se engarga de almacenar los tipos de galerías existentes en el sistema, tienen nombre dependiendo el tipo de evento, ya sea de boda, xv años, etc.';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -32,8 +108,6 @@ CREATE TABLE `tipo_galeria` (
 -- Dumping data for table `tipo_galeria`
 --
 
-/*!40000 ALTER TABLE `tipo_galeria` DISABLE KEYS */;
-/*!40000 ALTER TABLE `tipo_galeria` ENABLE KEYS */;
 
 --
 -- Dumping events for database 'enfoque'
@@ -42,7 +116,7 @@ CREATE TABLE `tipo_galeria` (
 --
 -- Dumping routines for database 'enfoque'
 --
-/*!50003 DROP PROCEDURE IF EXISTS `add_tipo_galeria` */;
+/*!50003 DROP PROCEDURE IF EXISTS add_foto */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
@@ -52,7 +126,66 @@ CREATE TABLE `tipo_galeria` (
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `add_tipo_galeria`(nnombre varchar (45))
+CREATE DEFINER=root@localhost PROCEDURE add_foto(nid_galeria int, nurl varchar(250) )
+BEGIN
+	insert into elemento (id_galeria, tipo_elemento, url) values(nid_galeria, 1, nurl);
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS add_galeria */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=root@localhost PROCEDURE add_galeria(nid_tipo_galeria int, nnombre varchar (45), descripcion varchar (45))
+BEGIN
+	insert into galeria (id_tipo_galeria, nombre, descripcion, fecha_subida ) 
+    values (nid_tipo_galeria, nnombre, descripcion, now());
+    select max(id_galeria) from galeria;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS add_portada */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=root@localhost PROCEDURE add_portada(nid_galeria int, nportada varchar (250))
+BEGIN
+	update galeria set portada=nportada, step=2, fecha_subida=now() where id_galeria=nid_galeria;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS add_tipo_galeria */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=root@localhost PROCEDURE add_tipo_galeria(nnombre varchar (45))
 BEGIN
 	insert into tipo_galeria (nombre) values (nnombre);
     
@@ -62,7 +195,7 @@ DELIMITER ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
 /*!50003 SET character_set_results = @saved_cs_results */ ;
 /*!50003 SET collation_connection  = @saved_col_connection */ ;
-/*!50003 DROP PROCEDURE IF EXISTS `del_tipo_galeria` */;
+/*!50003 DROP PROCEDURE IF EXISTS add_video */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
@@ -72,7 +205,26 @@ DELIMITER ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `del_tipo_galeria`(nid int, nactivo int)
+CREATE DEFINER=root@localhost PROCEDURE add_video(nid_galeria int, nurl varchar(250) )
+BEGIN
+	insert into elemento (id_galeria, tipo_elemento, url) values(nid_galeria, 2, nurl);
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS del_tipo_galeria */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=root@localhost PROCEDURE del_tipo_galeria(nid int, nactivo int)
 BEGIN
 	update tipo_galeria set activo=nactivo where id_tipo_galeria=nid;
 END ;;
@@ -81,7 +233,7 @@ DELIMITER ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
 /*!50003 SET character_set_results = @saved_cs_results */ ;
 /*!50003 SET collation_connection  = @saved_col_connection */ ;
-/*!50003 DROP PROCEDURE IF EXISTS `up_tipo_galeria` */;
+/*!50003 DROP PROCEDURE IF EXISTS up_tipo_galeria */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
@@ -91,7 +243,7 @@ DELIMITER ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `up_tipo_galeria`(nid int, nnombre varchar (45))
+CREATE DEFINER=root@localhost PROCEDURE up_tipo_galeria(nid int, nnombre varchar (45))
 BEGIN
 	update tipo_galeria set nombre=nnombre where id_tipo_galeria=nid;
 END ;;
@@ -109,4 +261,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-10-16 19:16:21
+-- Dump completed
