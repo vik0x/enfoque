@@ -1,0 +1,7 @@
+[17-Oct-2015 23:30:04 America/Mexico_City] PHP Fatal error:  Class 'Illuminate\Foundation\Http\Kernel' not found in /home/enfoquecol/public_html/enfoque/app/Http/Kernel.php on line 8
+[18-Oct-2015 09:43:53 America/Mexico_City] PHP Fatal error:  Class 'Route' not found in /home/enfoquecol/public_html/enfoque/app/Http/routes.php on line 14
+[18-Oct-2015 15:33:39 America/Mexico_City] PHP Fatal error:  Class 'Route' not found in /home/enfoquecol/public_html/enfoque/app/Http/routes.php on line 14
+[18-Oct-2015 20:13:30 America/Mexico_City] PHP Fatal error:  Class 'Illuminate\Foundation\Http\Kernel' not found in /home/enfoquecol/public_html/enfoque/app/Http/Kernel.php on line 8
+[18-Oct-2015 21:25:23 America/Mexico_City] PHP Fatal error:  Class 'Route' not found in /home/enfoquecol/public_html/enfoque/app/Http/routes.php on line 14
+[20-Oct-2015 11:55:39 America/Mexico_City] PHP Fatal error:  Class 'Illuminate\Foundation\Http\Kernel' not found in /home/enfoquecol/public_html/enfoque/app/Http/Kernel.php on line 8
+[20-Oct-2015 15:44:01 America/Mexico_City] PHP Fatal error:  Class 'Route' not found in /home/enfoquecol/public_html/enfoque/app/Http/routes.php on line 14

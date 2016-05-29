@@ -1,0 +1,1 @@
+[19-Oct-2015 12:44:44 America/Mexico_City] PHP Fatal error:  Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/enfoquecol/public_html/enfoque/app/Http/Requests/Request.php on line 8

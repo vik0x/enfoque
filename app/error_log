@@ -1,0 +1,4 @@
+[17-Oct-2015 23:25:33 America/Mexico_City] PHP Fatal error:  Class 'Illuminate\Database\Eloquent\Model' not found in /home/enfoquecol/public_html/enfoque/app/User.php on line 13
+[18-Oct-2015 06:23:47 America/Mexico_City] PHP Fatal error:  Class 'Illuminate\Database\Eloquent\Model' not found in /home/enfoquecol/public_html/enfoque/app/User.php on line 13
+[19-Oct-2015 04:17:47 America/Mexico_City] PHP Fatal error:  Class 'Illuminate\Database\Eloquent\Model' not found in /home/enfoquecol/public_html/enfoque/app/User.php on line 13
+[20-Oct-2015 03:54:48 America/Mexico_City] PHP Fatal error:  Class 'Illuminate\Database\Eloquent\Model' not found in /home/enfoquecol/public_html/enfoque/app/User.php on line 13

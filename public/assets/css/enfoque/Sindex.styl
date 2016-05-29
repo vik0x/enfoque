@@ -1,0 +1,244 @@
+body,html
+	background black
+	position relative
+	height 100%
+.wrapper
+	min-height 100%
+.img-logo
+	width 100px
+	display inline-block
+	vertical-align top 
+	display inline-block
+	float left
+	padding 10px
+	margin-right 3%
+.navbar
+	background-color black
+	border-radius 0px
+	border 0px
+	border-bottom 1px solid #ccc
+	margin-bottom 0
+	a
+		color white !important
+	li.active
+		a
+			background-color transparent !important
+			color black !important
+.dropdown-toggle
+	background-color transparent !important
+.dropdown-menu
+	background-color rgba(0, 0, 0, .85)
+	a:hover
+		background-color transparent !important
+.nav.navbar-nav
+	margin-top 15px
+.carousel-inner
+	text-align center
+	height 400px
+	img
+		width 100%
+	.carousel-content 
+		position absolute
+		vertical-align middle
+		color white
+		top 0
+		width 100%
+		text-align center
+		margin-top 40px
+		text-shadow 0px 0px 4px #000
+		p 
+			margin auto
+			width 40%
+		a
+			text-decoration none
+			color white
+		.btn-conocenos
+			padding 10px
+			border-radius 5px
+			border 2px solid white
+			margin auto
+			margin-top 10px	
+			width 20%
+.container-slider-principal--
+	padding 0
+	margin-bottom 15px
+	.item
+		height 100%
+		img
+			height 100%
+			width initial
+			margin auto
+.container-gallery hover img
+	width  165%
+.cont-video
+	position relative
+	font-size 4em
+	color white
+	text-shadow 3px 3px 4px rgba(0, 0, 0, .75)
+	cursor pointer
+	img 
+		opacity .4
+.container-gallery
+	text-align center
+	margin-bottom  15px
+	background-color #000
+	position relative
+	height 360px
+	color white
+	font-size 2em
+	overflow hidden
+	cursor pointer
+	img
+		width 150%
+		opacity .6
+		cursor pointer
+		max-width initial
+		-webkit-transition all .5s 
+		-moz-transition all .5s 
+		-ms-transition all .5s 
+		-o-transition all .5s 
+		transition all .5s 
+	.container-title
+		width 80%
+	strong
+		border-bottom 3px solid white
+		text-align left 
+	p
+		font-size 0.6em
+		color #f9f9f9
+		text-align center 
+	.container-info-album
+		position absolute
+		bottom 0
+		left 0
+		right 0
+		padding 0 5px 0 15px
+		span
+			font-size 0.7em
+		span.icons
+			font-size 1.3em
+			vertical-align middle
+			margin-left 5px
+		.info-videos
+			float right 
+			margin-right 10px
+		.info-images
+			float left
+			margin-left 10px
+.centrado-porcentual 
+	position  absolute
+	left  50%
+	top  50%
+	transform  translate(-50%, -50%)
+	-webkit-transform  translate(-50%, -50%)
+footer
+	padding 1%
+	background-color #AC1E23
+	color white
+	margin-top 5%
+.we-in-construction
+	position fixed
+	left 0
+	right 0
+	top 0
+	bottom 0
+	background #000
+	color white
+	text-align center
+	overflow-x hidden
+	z-index  1000
+	-webkit-transition all .5s
+	-moz-transition all .5s
+	-ms-transition all .5s
+	-o-transition all .5s
+	transition all .5s
+	img
+		width  30%
+		margin auto
+		margin-top 5%
+	h3
+		margin-top 3%
+		animation-iteration-count: infinite;
+/*====GALERIAS===*/
+.image-gallery
+	cursor pointer
+.overlay--
+	position fixed
+	top 0
+	left 0
+	right 0
+	bottom 0
+	background rgba(0, 0, 0, .75)
+	text-align center
+	overflow-y scroll
+	display none
+	.modals--
+		display none
+	.close-control
+		position absolute
+		top 0
+		left 0
+		right 0
+		color white
+		z-index 2
+		background rgba(0, 0, 0, .45)
+		span 
+			float right 
+			margin-right 20px
+			font-size 2em
+			cursor pointer
+			opacity .5
+		&:hover
+			opacity 1
+	.container-slider-gallery
+		width 75%
+		margin auto
+		margin-top 5%
+		margin-bottom 5%
+		.carousel-inner
+			height auto
+		.carousel
+			height auto
+/*youtube PLAYER*/
+.overlay-video
+	position fixed
+	bottom 0
+	right 0
+	left 0
+	top 0
+	background rgba(0, 0, 0, .75)
+	display none
+	.control-video
+		background rgba(255, 255, 255, .85)
+		color black
+		font-weight bold
+		padding 20px
+		text-align right 
+		span
+			cursor pointer
+	.contenedor-video
+		width 55%
+		iframe
+			background white
+	
+/*======================
+	RESPONSIVE
+========================*/
+/*RESPONSIVE CONFIGURTIONS*/
+
+/*SMALL DEVICES */
+@media  (max-width: 991px) 
+	.overlay-video
+		z-index 1000
+		.contenedor-video
+			width 85% !important
+			
+			overflow-y scroll
+		.control-video
+			font-size 2em
+	.image-gallery
+		height initial !important
+@media  (max-width: 599px) {
+
+
+}

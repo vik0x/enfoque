@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\tipo_galeria;
 
 class tipoGaleriaController extends Controller
 {
@@ -14,7 +15,10 @@ class tipoGaleriaController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index(){
-        
+        $data=array(
+            'categorias'=>\App\tipo_galeria::select('id_tipo_galeria as id','nombre')->orderBy('activo','desc')->orderBy('nombre')->where('id_tipo_galeria','>',0)->paginate(15),
+        );
+        return view('admin.categorias',$data);
         //
     }
 
@@ -36,15 +40,22 @@ class tipoGaleriaController extends Controller
      */
     public function store(Request $request){
         $nombre = $request->nombre;
+        $data = array();
+        $categoria = new tipo_galeria;
         if(trim($nombre) != "" ){
-            if(\DB::statement('CALL add_tipo_galeria("' . $nombre . '")')){
-                // correcto
+            $categoria->nombre = $nombre;
+            $categoria->activo = 1;
+            if($categoria->save()){
+                $data['id'] = $categoria->id_tipo_galeria;
+                $data['mensaje'] = "La categoría se agregó correctamente";
+                $data['error'] = FALSE;
             }
             else{
-                // incorrecto
+                $data['mensaje'] = "La categoría no pudo ser agregada";
+                $data['error'] = TRUE;
             }
         }
-        //
+        echo json_encode($data);    
     }
 
     /**

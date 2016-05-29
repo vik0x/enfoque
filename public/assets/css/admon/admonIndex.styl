@@ -1,0 +1,542 @@
+.content-wrapper
+	background-color #f9f9f9 !important
+input.wrong,textarea.wrong,select.wrong
+	border 1px solid #DE6868 !important	
+input.file-hidden
+	display none !important
+.container-btn-image
+	width 150px
+	height 150px
+	background #3D7EF6
+	color white
+	cursor pointer
+	position relative
+	font-size 2.5em
+	border-radius 100px
+	-webkit-transition all .5s 
+	-moz-transition all .5s 
+	-ms-transition all .5s 
+	-o-transition all .5s 
+	transition all .5s 
+.container-btn-image.selected
+	background #16a085
+	border-radius 0px
+	-webkit-transition all 0s 
+	-moz-transition all 0s 
+	-ms-transition all 0s 
+	-o-transition all 0s 
+	transition all 0s 
+.progress-container
+	width: 90%;
+	background: #cfcfcf;
+	height: 5px;
+	margin: auto;
+	display none
+	margin-top 10px
+	.progress-bar--
+		width 0px
+		height 100%
+		background #1CB2B7
+.modal-confirm	
+	width 40%
+	background #f9f9f9
+	padding 20px
+.modal-publicity-position
+	width 100% !important
+	left 0 !important
+	right 0 !important
+	top 0px !important
+	bottom 0 !important
+	overflow-y scroll !important
+	position absolute !important
+	.container-publicitys
+		padding 20px
+		text-align center
+		.space-publicity
+			font-size 2.5em
+			display inline-block
+			width 200px
+			height 200px
+			background #1CB2B7
+			color white
+			position relative
+			margin 2%
+		.space-publicity.drop-active
+			background #E45E5E
+			
+.container-principal-options--
+	padding 10px
+	background-color #f9f9f9
+	text-align center
+	div.col-lg-4
+		text-align center
+		-webkit-animation-duration .5s 
+		-moz-animation-duration .5s 
+		-ms-animation-duration .5s 
+		-o-animation-duration .5s 
+		animation-duration .5s 
+	.container-option
+		width 200px
+		height 200px
+		text-align center
+		border 2px dashed #5B5B5B
+		position relative
+		color #5B5B5B
+		cursor pointer
+		margin auto
+		margin-top 3%
+		span.fa 
+			font-size 3em
+			-webkit-transition all 0.3s 
+			-moz-transition all 0.3s 
+			-ms-transition all 0.3s 
+			-o-transition all 0.3s 
+			transition all 0.3s 
+		p.desc-option 
+			position absolute
+			bottom 0
+			right 0
+			left 0
+			font-size 1.4em
+		
+	.container-option:hover
+		-webkit-animation-name bounce
+		-o-animation-name bounce
+		-moz-animation-name bounce
+		animation-name bounce
+		animation-duration .5s
+		color #2386B0
+		border-color #2386B0
+
+.center-porcent
+	position absolute
+	left 50%
+	top 50%
+	transform translate(-50%, -50%)
+	-webkit-transform translate(-50%, -50%)	
+			
+		
+.overlay-modals
+	position fixed
+	left 0
+	right 0
+	bottom 0
+	top 0
+	background-color rgba(0, 0, 0, .75)
+	overflow auto
+	z-index 1030
+	display none
+	-webkit-animation-duration 0.6s
+	-moz-animation-duration 0.6s
+	-ms-animation-duration 0.6s
+	-o-animation-duration 0.6s
+	animation-duration 0.6s
+	.header-modal
+		padding 1%
+		border-bottom 1px solid #ccc
+	.body-modal
+		padding 3%
+		position relative
+		input,textarea,select
+			padding 5px
+			outline none
+			display block
+			width 70%
+			resize none
+			border 1px solid #ccc
+		input.wrong,textarea.wrong
+			border 1px solid #DE6868 !important
+	.footer-modal
+		padding 10px
+		border-top 1px solid #ccc
+		overflow hidden
+		.btn-save--,.btn-cancel--
+			margin 1%
+		.btn-save--
+			border-radius 2px
+			border 1px solid #2A89BF
+			color #2A89BF
+			float right 
+		.btn-cancel--
+			border-radius 2px
+			border 1px solid #5D5D5D
+			color #5D5D5D
+			float right
+	.modals--
+		background-color #f9f9f9
+		width  50%
+		display none
+		position absolute
+		top 15%
+		left 25%		
+		z-index 1035
+		overflow hidden
+		transform-origin center	
+		-webkit-animation-duration 0.8s 
+		-moz-animation-duration 0.8s 
+		-ms-animation-duration 0.8s 
+		-o-animation-duration 0.8s 
+		animation-duration 0.8s 
+	.modal-publicidad
+		.container-btn-image-mobile
+			width 150px
+			height 150px
+			background white
+			color #3D7EF6
+			border 1px solid #3D7EF6
+			cursor pointer
+			position relative
+			font-size 2.5em
+			border-radius 100px
+			display inline-block
+			margin-left 20px
+			display none
+		.container-btn-image
+			width 150px
+			height 150px
+			background #3D7EF6
+			color white
+			cursor pointer
+			position relative
+			font-size 2.5em
+			border-radius 100px
+			display inline-block
+		.container-btn-image.selected
+			background #16a085
+			border-radius 0px
+		.steps--
+			display none
+		.steps--.active
+			display block !important
+		.form-position-slider
+			display none
+.modal-choose-portada 
+	label
+		color #aaa
+	.container-choose
+		margin auto
+		width 200px
+		height 200px
+		cursor pointer
+		position relative
+		margin-top 5%
+		background-size: 140% !important
+		background-repeat no-repeat !important
+		-webkit-transition all 0.3s
+		-moz-transition all 0.3s
+		-ms-transition all 0.3s
+		-o-transition all 0.3s
+		transition all 0.3s
+		.container-icon
+			span
+				font-size 3em
+		p 
+			position absolute
+			bottom 0
+			left 0
+			right 0
+			text-align center
+			text-shadow 0px 0px 6px #000
+			font-weight bold
+	.unchoose
+		border-radius 100px
+		border 1px dashed #5D5D5D
+	
+	.unchoose:hover
+		background #349AC9
+		color white
+		border-color transparent !important
+	.selected
+		background #349AC9
+		color white
+		border-color transparent
+.modals--.modal-dropable
+	// display block !important
+	left 0 !important
+	right 0 !important
+	top 2% !important
+	width: 97%
+	margin auto
+	.content-options-edit
+		width: 90%
+		height 50px
+		margin auto
+		position relative
+		.options-edit
+			position absolute
+			width: 150px
+			color white
+			cursor pointer
+			top 0px
+			right 0px
+			display none
+		.option-delete-images
+			background #EC5555
+			border-bottom 2px  solid #C23535
+			.container-icon
+				float left
+				padding 3px
+				font-size 1.2em
+				padding-left 10px
+				padding-right 10px
+				background #DB4B4B
+			div.text-option
+				float left
+		.option-save-images
+			background #2DA9D8
+			border-bottom 2px  solid #257492
+			display none
+		.container-icon
+			float left
+			padding 3px
+			font-size 1.2em
+			padding-left 10px
+			padding-right 10px
+			background #2B96BF
+		div.text-option
+			float left
+	input.file-hidden
+		display none
+	.drop-images
+		width: 90%
+		height 350px
+		border 1px dashed #ccc
+		margin auto
+		padding 20px
+		-webkit-transition all 0.3s
+		-moz-transition all 0.3s
+		-ms-transition all 0.3s
+		-o-transition all 0.3s
+		transition all 0.3s
+		position relative
+		.container-icon 
+			text-align center
+			color white	
+			span
+				margin-bottom 2%
+				font-size 3em
+				
+		.circle-effect
+			width 200px
+			height 200px
+			border-radius 100px
+			border 1px dashed transparent
+			background #349AC9
+			color white
+		.element-image
+			width 130px
+			height 110px
+			background #349AC9
+			border-radius 5px
+			display inline-block
+			margin 5px
+			position relative
+			background-size: 100% !important
+			background-repeat no-repeat !important
+			cursor pointer
+			span
+				color #F14343
+				// text-shadow 0px 0px 1px #000
+				display none
+				position absolute
+				left -10px
+				top -10px	
+	.cant-new-imagenes
+		width 90%
+		margin auto
+		font-weight  900
+		color #DA4A4A
+
+	.drop-active
+		background-color #349AC9
+		border-color transparent
+		.circle-effect
+			width 200px
+			height 200px
+			border-radius 100px
+			border 1px dashed white
+			background white
+			color black
+			.container-icon
+				color #B3B3B3
+.modal-youtube
+	// display block !important
+	.youtube-container
+		margin auto
+		position relative
+		margin-bottom 2%
+		margin-left 5%
+		label
+			display block
+		span
+			font-size 1.6em
+		input
+			display inline-block !important
+			width: 40%
+		input.form-control
+			width: 	50%
+			display block !important
+			margin-bottom: 5px
+		.container-videos
+			margin-top 2%	
+			.video
+				overflow hidden
+				border 1px solid #ccc
+				height 50px
+				border-top-left-radius 5px
+				border-bottom-left-radius 5px
+				border-top-right-radius 5px
+				border-bottom-right-radius 5px
+				width 75%
+				position relative
+				margin-top 2%	
+				span.fa-close
+					font-size 1em
+					position absolute
+					right 10px
+					top 17px
+					color #aaa
+					cursor pointer
+				strong
+					display inline-block					
+				.container-icon
+					background-color #222
+					color white
+					position relative
+					width  50px
+					height 50px
+					border-top-left-radius 5px
+					border-bottom-left-radius 5px
+					display inline-block
+					float left
+
+.sacudir
+	animation sacudir ease-in .5s
+	animation-iteration-count infinite
+	transform-origin 50% 50%
+	-webkit-animation sacudir ease-in .5s
+	-webkit-animation-iteration-count infinite
+	-webkit-transform-origin 50% 50%
+	-moz-animation sacudir ease-in .5s
+	-moz-animation-iteration-count infinite
+	-moz-transform-origin 50% 50%
+	-o-animation sacudir ease-in .5s
+	-o-animation-iteration-count infinite
+	-o-transform-origin 50% 50%
+	-ms-animation sacudir ease-in .5s
+	-ms-animation-iteration-count infinite
+	-ms-transform-origin 50% 50%
+	position relative
+/*==============================
+		* KEYFRAMES *
+===============================*/					
+
+@keyframes sacudir
+{
+  0% {
+	transform:  rotate(0deg) ;
+  }
+  20% {
+	transform:  rotate(15deg) ;
+  }
+  40% {
+	transform:  rotate(-10deg) ;
+  }
+  60% {
+	transform:  rotate(5deg) ;
+  }
+  80% {
+	transform:  rotate(-5deg) ;
+  }
+  100% {
+	transform:  rotate(0deg) ;
+  }
+}
+
+@-moz-keyframes sacudir
+{
+  0% {
+	-moz-transform:  rotate(0deg) ;
+  }
+  20% {
+	-moz-transform:  rotate(15deg) ;
+  }
+  40% {
+	-moz-transform:  rotate(-10deg) ;
+  }
+  60% {
+	-moz-transform:  rotate(5deg) ;
+  }
+  80% {
+	-moz-transform:  rotate(-5deg) ;
+  }
+  100% {
+	-moz-transform:  rotate(0deg) ;
+  }
+}
+
+@-webkit-keyframes sacudir
+{
+  0% {
+	-webkit-transform:  rotate(0deg) ;
+  }
+  20% {
+	-webkit-transform:  rotate(15deg) ;
+  }
+  40% {
+	-webkit-transform:  rotate(-10deg) ;
+  }
+  60% {
+	-webkit-transform:  rotate(5deg) ;
+  }
+  80% {
+	-webkit-transform:  rotate(-5deg) ;
+  }
+  100% {
+	-webkit-transform:  rotate(0deg) ;
+  }
+}
+
+@-o-keyframes sacudir
+{
+  0% {
+	-o-transform:  rotate(0deg) ;
+  }
+  20% {
+	-o-transform:  rotate(15deg) ;
+  }
+  40% {
+	-o-transform:  rotate(-10deg) ;
+  }
+  60% {
+	-o-transform:  rotate(5deg) ;
+  }
+  80% {
+	-o-transform:  rotate(-5deg) ;
+  }
+  100% {
+	-o-transform:  rotate(0deg) ;
+  }
+}
+
+@-ms-keyframes sacudir 
+{
+  0% {
+	-ms-transform:  rotate(0deg) ;
+  }
+  20% {
+	-ms-transform:  rotate(15deg) ;
+  }
+  40% {
+	-ms-transform:  rotate(-10deg) ;
+  }
+  60% {
+	-ms-transform:  rotate(5deg) ;
+  }
+  80% {
+	-ms-transform:  rotate(-5deg) ;
+  }
+  100% {
+	-ms-transform:  rotate(0deg) ;
+  }
+}

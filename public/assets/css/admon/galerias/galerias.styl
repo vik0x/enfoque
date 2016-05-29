@@ -1,0 +1,107 @@
+.content-wrapper
+	background #f9f9f9 !important
+.centrado-porcentual {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+}
+.container-wrapper
+	background #f9f9f9 !important
+	padding 40px
+	.failed-gallery
+		font-size 2.4em !important
+	.container-gallery
+		padding-left 5px !important
+		padding-right 5px !important
+	.container-gallery:hover
+		cursor move
+		cursor -webkit-grab
+		cursor -moz-grab
+		cursor grab
+	
+	.gallery
+		background-color black
+		overflow hidden
+		margin-top 10px
+		height 180px
+		color white
+		position relative
+		border-radius 5px
+		cursor move
+		cursor -webkit-grab
+		cursor -moz-grab
+		cursor grab
+		img 
+			width 140%
+			opacity .5
+		p
+			position absolute
+			top 20px
+			color white
+			text-align center
+			left 0	
+			right 0	
+			font-weight 900
+		span.centrado-porcentual
+			font-size 4em
+		.info-content
+			position absolute
+			bottom 5px
+			left 10px
+			right 10px
+			span.ion-ios-camera
+				margin-left 5px
+				font-size 1.2em
+				vertical-align middle
+			span.info-videos
+				float right 
+				span
+					margin-left 5px
+					font-size 1.2em
+					vertical-align middle
+				span.cant-videos
+					font-size 1em
+	.gallery.grabbing
+		cursor -webkit-grabbing
+		cursor -moz-grabbing
+		cursor grabbing
+.overlay-options
+	background rgba(0, 0, 0, .75)
+	position fixed
+	top 0
+	bottom 0
+	left 0
+	right 0
+	z-index 1000
+	display none
+	-webkit-animation-duration 0.3s
+	-moz-animation-duration 0.3s
+	animation-duration 0.3s
+	.content-options
+		border-radius 5px
+		background #f9f9f9
+		padding 50px
+		box-sizing border-box
+		width: 70%
+		text-align center
+		.option
+			text-align center
+			position relative
+			display inline-block
+			width 45%
+			height 350px
+			border-radius 5px
+			background #ebebeb
+			vertical-align top
+			margin-left 10px
+			margin-right 10px
+			overflow hidden
+			margin-top: 10px
+			span 
+				font-size 4em
+		.option.drop-active
+			background #F46872
+			color white
+	
